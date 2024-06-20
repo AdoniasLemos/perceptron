@@ -7,3 +7,10 @@
     text-align: center; /* Centraliza o conteúdo */
     padding: 10px; /* Ajuste este valor para o espaçamento interno das células *//* Adiciona uma borda às células */
   }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  

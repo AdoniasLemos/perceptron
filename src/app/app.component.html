@@ -29,11 +29,10 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <button mat-flat-button color="primary" (click)="train()">Executar</button>
+    <button mat-flat-button color="primary" (click)="train()">Train</button>
 
 
     <table>
-
       <tr>
         <th>W1</th>
         <th>W2</th>
@@ -45,7 +44,25 @@
         <td style="align-content: center;">{{weights[2]}}</td>
       </tr>
     </table>
-
-
   </mat-card-content>
+
+
+
+  <form class="example-form" [formGroup]="calculatorForm" (ngSubmit)="calculate()">
+    <mat-form-field class="example-full-width">
+      <mat-label for="number1">Input 1:</mat-label>
+      <input id="number1" formControlName="input1" type="number" matInput>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label for="number2">Input 2:</mat-label>
+      <input id="number2" formControlName="input2" type="number" matInput>
+    </mat-form-field>
+    <br>
+    <button mat-flat-button color="primary" type="submit">Predict</button>
+    <mat-form-field class="example-full-width">
+      <mat-label>Result</mat-label>
+      <input matInput disabled value="{{result}}">
+    </mat-form-field>
+  </form>
+
 </mat-card>
