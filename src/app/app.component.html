@@ -10,19 +10,19 @@
 
       <!-- Name Column -->
       <ng-container matColumnDef="entrada1">
-        <th mat-header-cell *matHeaderCellDef> Entrada 1 </th>
+        <th mat-header-cell *matHeaderCellDef> Input 1 </th>
         <td mat-cell *matCellDef="let element"> {{element.inputs[0]}} </td>
       </ng-container>
 
       <!-- Weight Column -->
       <ng-container matColumnDef="entrada2">
-        <th mat-header-cell *matHeaderCellDef> Entrada 2 </th>
+        <th mat-header-cell *matHeaderCellDef> Input 2 </th>
         <td mat-cell *matCellDef="let element"> {{element.inputs[1]}} </td>
       </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="resultado">
-        <th mat-header-cell *matHeaderCellDef> Resultado </th>
+        <th mat-header-cell *matHeaderCellDef> Result </th>
         <td mat-cell *matCellDef="let element"> {{element.output}} </td>
       </ng-container>
 
@@ -40,9 +40,9 @@
         <th>W3</th>
       </tr>
       <tr>
-        <td style="align-content: center;">{{pesos[0]}}</td>
-        <td style="align-content: center;">{{pesos[1]}}</td>
-        <td style="align-content: center;">{{pesos[2]}}</td>
+        <td style="align-content: center;">{{weights[0]}}</td>
+        <td style="align-content: center;">{{weights[1]}}</td>
+        <td style="align-content: center;">{{weights[2]}}</td>
       </tr>
     </table>
 

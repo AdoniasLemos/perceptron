@@ -33,7 +33,7 @@ export class AppComponent {
   dataSource = ELEMENT_DATA;
 
 
-  pesos = [1, 1, 1];
+  weights = [1, 1, 1];
 
   activationFunction(sum: number): number {
     return sum >= 0 ? 1 : -1;
@@ -41,7 +41,7 @@ export class AppComponent {
 
 
 
-  calcularErro(valorDesejado: number, valorObtido: number) {
+  error(valorDesejado: number, valorObtido: number) {
     return valorDesejado - valorObtido;
   }
 
@@ -50,30 +50,30 @@ export class AppComponent {
       let inputs = this.dataSource[i].inputs;
       let prediction = this.predict(this.dataSource[i].inputs);
       let valorDesejado = this.dataSource[i].output
-      let error = this.calcularErro(valorDesejado, prediction);
+      let error = this.error(valorDesejado, prediction);
 
       while (error != 0) {
-        console.log(this.pesos)
+        console.log(this.weights)
         console.log(i)
-        this.ajustarPesos(error, inputs);
+        this.adjustWeights(error, inputs);
 
         prediction = this.predict(inputs)
 
-        error = this.calcularErro(valorDesejado, prediction)
+        error = this.error(valorDesejado, prediction)
       }
     }
   }
 
-  private ajustarPesos(error: number, inputs: number[]) {
-    for (let j = 0; j < this.pesos.length; j++) {
-      this.pesos[j] += LEARNING_RATE * error * inputs[j];
+  private adjustWeights(error: number, inputs: number[]) {
+    for (let j = 0; j < this.weights.length; j++) {
+      this.weights[j] += LEARNING_RATE * error * inputs[j];
     }
   }
 
   predict(inputs: number[]) {
     let sum = 0;
     for (let i = 0; i < inputs.length; i++) {
-      sum += this.pesos[i] * inputs[i];
+      sum += this.weights[i] * inputs[i];
     }
     return this.activationFunction(sum)
   }
