@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+  }
+
+  th, td {
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 10px; /* Ajuste este valor para o espaçamento interno das células *//* Adiciona uma borda às células */
+  }
